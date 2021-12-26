@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 
 import { googleStrategy } from './config/passport'
-/* import movieRouter from './routers/movie' */
 import userRouter from './routers/user'
 import productRouter from './routers/product'
 import apiErrorHandler from './middlewares/apiErrorHandler'
@@ -26,9 +25,6 @@ app.use(lusca.xframe('SAMEORIGIN'))
 app.use(lusca.xssProtection(true))
 app.use(passport.initialize())
 app.use(passport.session())
-
-// Use movie router
-/* app.use('/api/v1/movies', movieRouter) */
 
 // Use product router
 app.use('/api/v1/products', productRouter)
